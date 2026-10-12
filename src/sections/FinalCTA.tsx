@@ -14,22 +14,224 @@ export default function FinalCTA() {
 
   return (
     <>
-      {/* MAIN CTA SECTION */}
+      {/* =========================================
+          PREMIUM FOUNDERS SECTION
+      ========================================= */}
+      <section className="relative overflow-hidden bg-[#F7F4EC] px-5 py-20 md:px-10 md:py-28 lg:px-14">
+        {/* Top decorative wave */}
+        <div className="pointer-events-none absolute inset-x-0 top-0">
+          <svg
+            viewBox="0 0 1440 100"
+            className="h-auto w-full"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,0 H1440 V35 C1120,100 850,0 560,45 C320,80 150,70 0,35 Z"
+              fill="#E8F0E2"
+            />
+          </svg>
+        </div>
+
+        <div className="relative mx-auto max-w-[1120px]">
+          {/* Section heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+            className="mb-14 text-center md:mb-16"
+          >
+            <span className="inline-flex items-center gap-3 rounded-full border border-[#075B32]/15 bg-white/70 px-5 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#075B32]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#75A85C]" />
+              The People Behind EasyDiet
+            </span>
+
+            <h2 className="mt-6 text-4xl font-light leading-tight tracking-[-0.045em] text-[#17352A] md:text-6xl">
+              Meet the minds
+              <br />
+              behind your{" "}
+              <span className="font-normal italic text-[#52814A]">
+                wellbeing.
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#17352A]/65 md:text-base">
+              Building a more thoughtful, personal and practical
+              approach to everyday nutrition.
+            </p>
+          </motion.div>
+
+          {/* Founder profile cards */}
+          <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-10">
+            {/* FOUNDER & CEO */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7 }}
+              className="group relative overflow-hidden rounded-[28px] border border-[#17352A]/10 bg-white shadow-[0_12px_50px_rgba(23,53,42,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(23,53,42,0.13)]"
+            >
+              {/* Founder photo */}
+              <div className="relative h-[350px] overflow-hidden bg-[#E9E4D8] sm:h-[410px]">
+                <img
+                  src="/images/ankit-founder.png"
+                  alt="Mr Ankit, Founder and CEO of EasyDiet"
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#102A20]/40 via-transparent to-transparent" />
+
+                {/* Wave-shaped photo edge */}
+                <div className="absolute bottom-0 left-0 w-full">
+                  <svg
+                    viewBox="0 0 600 90"
+                    preserveAspectRatio="none"
+                    className="block h-[65px] w-full sm:h-[80px]"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M0,55 C120,5 220,90 350,48 C450,15 520,20 600,42 L600,90 L0,90 Z"
+                      fill="#FFFFFF"
+                    />
+                  </svg>
+                </div>
+
+                <span className="absolute left-5 top-5 rounded-full border border-white/40 bg-white/90 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#17352A] backdrop-blur-md">
+                  Leadership
+                </span>
+              </div>
+
+              {/* Founder details */}
+              <div className="relative px-7 pb-8 pt-2 text-center sm:px-10 sm:pb-10">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#64845D]">
+                  Founder &amp; CEO
+                </p>
+
+                <h3 className="mt-3 text-3xl font-medium tracking-tight text-[#17352A] sm:text-4xl">
+                  Mr Ankit
+                </h3>
+
+                <div className="mx-auto mt-5 flex items-center justify-center gap-2">
+                  <span className="h-px w-10 bg-[#B8D9A6]" />
+                  <span className="h-2 w-2 rounded-full bg-[#75A85C]" />
+                  <span className="h-px w-10 bg-[#B8D9A6]" />
+                </div>
+
+                <p className="mx-auto mt-5 max-w-xs text-sm leading-7 text-[#17352A]/65">
+                  Leading the vision to make personalised nutrition
+                  simpler and more accessible.
+                </p>
+
+                <div className="pointer-events-none absolute -bottom-8 -right-5 select-none text-8xl font-light tracking-tighter text-[#075B32]/[0.045]">
+                  01
+                </div>
+              </div>
+            </motion.article>
+
+            {/* CO-FOUNDER */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="group relative mt-0 overflow-hidden rounded-[28px] border border-[#17352A]/10 bg-white shadow-[0_12px_50px_rgba(23,53,42,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(23,53,42,0.13)] md:mt-12"
+            >
+              {/* Co-founder photo */}
+              <div className="relative h-[350px] overflow-hidden bg-[#E9E4D8] sm:h-[410px]">
+                <img
+                  src="/images/shivam-cofounder.jpeg"
+                  alt="Shivam Chandra, Co-Founder of EasyDiet"
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#102A20]/40 via-transparent to-transparent" />
+
+                {/* Wave-shaped photo edge */}
+                <div className="absolute bottom-0 left-0 w-full">
+                  <svg
+                    viewBox="0 0 600 90"
+                    preserveAspectRatio="none"
+                    className="block h-[65px] w-full sm:h-[80px]"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M0,35 C100,70 220,10 340,50 C450,85 530,65 600,25 L600,90 L0,90 Z"
+                      fill="#FFFFFF"
+                    />
+                  </svg>
+                </div>
+
+                <span className="absolute left-5 top-5 rounded-full border border-white/40 bg-white/90 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-[#17352A] backdrop-blur-md">
+                  Strategy &amp; Growth
+                </span>
+              </div>
+
+              {/* Co-founder details */}
+              <div className="relative px-7 pb-8 pt-2 text-center sm:px-10 sm:pb-10">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#64845D]">
+                  Co-Founder
+                </p>
+
+                <h3 className="mt-3 text-3xl font-medium tracking-tight text-[#17352A] sm:text-4xl">
+                  Shivam Chandra
+                </h3>
+
+                <div className="mx-auto mt-5 flex items-center justify-center gap-2">
+                  <span className="h-px w-10 bg-[#B8D9A6]" />
+                  <span className="h-2 w-2 rounded-full bg-[#75A85C]" />
+                  <span className="h-px w-10 bg-[#B8D9A6]" />
+                </div>
+
+                <p className="mx-auto mt-5 max-w-xs text-sm leading-7 text-[#17352A]/65">
+                  Helping shape the EasyDiet experience around
+                  everyday needs and healthier habits.
+                </p>
+
+                <div className="pointer-events-none absolute -bottom-8 -right-5 select-none text-8xl font-light tracking-tighter text-[#075B32]/[0.045]">
+                  02
+                </div>
+              </div>
+            </motion.article>
+          </div>
+        </div>
+
+        {/* Wave transition into green CTA */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-px">
+          <svg
+            viewBox="0 0 1440 90"
+            className="block h-auto w-full"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,50 C280,0 460,85 720,48 C990,10 1190,0 1440,45 L1440,90 L0,90 Z"
+              fill="#075B32"
+            />
+          </svg>
+        </div>
+      </section>
+
+      {/* =========================================
+          EXISTING MAIN CTA SECTION
+      ========================================= */}
       <section
         id="contact"
         className="relative overflow-hidden bg-[#075B32] px-6 py-28 text-[#FFFDF8] md:px-10 md:py-36 lg:px-14 lg:py-44"
       >
-        {/* DECORATIVE BACKGROUND */}
+        {/* Decorative background */}
         <div className="pointer-events-none absolute -right-20 -top-24 select-none text-[22rem] font-light leading-none tracking-[-0.08em] text-white/[0.035] md:text-[32rem]">
           07
         </div>
 
         <div className="pointer-events-none absolute bottom-0 left-0 h-[45%] w-[45%] rounded-full bg-[#B8D9A6]/[0.05] blur-3xl" />
 
-        {/* MAIN CONTENT */}
+        {/* Main content */}
         <div className="relative mx-auto max-w-[1250px]">
           <div className="grid gap-16 lg:grid-cols-[0.3fr_1fr] lg:gap-24">
-            {/* SECTION LABEL */}
+            {/* Section label */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -46,9 +248,9 @@ export default function FinalCTA() {
               <div className="mt-6 hidden h-20 w-px bg-[#CBE5BA]/30 lg:block" />
             </motion.div>
 
-            {/* MAIN CONTENT */}
+            {/* CTA content */}
             <div>
-              {/* HEADING */}
+              {/* Heading */}
               <div className="overflow-hidden">
                 <motion.h2
                   initial={{ y: "100%" }}
@@ -73,7 +275,7 @@ export default function FinalCTA() {
                 </motion.h2>
               </div>
 
-              {/* DESCRIPTION */}
+              {/* Description */}
               <motion.p
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -85,12 +287,12 @@ export default function FinalCTA() {
                 }}
                 className="mt-10 max-w-[680px] text-lg leading-8 text-white/65 md:text-xl md:leading-9"
               >
-                Tell us about your goals, your routine and the way you like
-                to eat. We'll help you take the first step towards a more
-                personalised approach to nutrition.
+                Tell us about your goals, your routine and the way
+                you like to eat. We'll help you take the first step
+                towards a more personalised approach to nutrition.
               </motion.p>
 
-              {/* CONTACT ACTIONS */}
+              {/* Contact actions */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +304,7 @@ export default function FinalCTA() {
                 }}
                 className="mt-12 flex flex-col flex-wrap gap-6 sm:flex-row sm:items-center"
               >
-                {/* GET MY DIET PLAN */}
+                {/* Get My Diet Plan */}
                 <button
                   type="button"
                   onClick={() => setFormOpen(true)}
@@ -119,7 +321,7 @@ export default function FinalCTA() {
                   </span>
                 </button>
 
-                {/* WHATSAPP */}
+                {/* WhatsApp */}
                 <a
                   href="https://wa.me/918923161712"
                   target="_blank"
@@ -137,15 +339,15 @@ export default function FinalCTA() {
                   />
                 </a>
 
-                {/* EMAIL */}
+                {/* Business email */}
                 <a
-                  href="mailto:in.easydiet@gmail.com"
+                  href="mailto:info@easydiet.in"
                   className="group inline-flex w-fit items-center gap-3 text-[11px] font-semibold text-white/75 transition-colors duration-300 hover:text-[#CBE5BA]"
                 >
                   <Mail size={17} strokeWidth={1.5} />
 
                   <span className="normal-case tracking-normal">
-                    in.easydiet@gmail.com
+                    info@easydiet.in
                   </span>
 
                   <ArrowUpRight
@@ -156,7 +358,7 @@ export default function FinalCTA() {
                 </a>
               </motion.div>
 
-              {/* BOTTOM DETAILS */}
+              {/* Bottom details */}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

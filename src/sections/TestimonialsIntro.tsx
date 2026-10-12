@@ -1,224 +1,182 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
+
+import { ArrowUpRight, Heart, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const testimonials = [
-  {
-    quote:
-      "For the first time, eating healthy felt realistic. The plan worked around my routine instead of asking me to completely change it.",
-    name: "EasyDiet Member",
-    journey: "Healthy Weight Loss",
-    result: "Built sustainable eating habits",
-  },
-  {
-    quote:
-      "I stopped thinking of food as something I had to restrict. The guidance helped me understand what my body actually needed.",
-    name: "EasyDiet Member",
-    journey: "Healthy Lifestyle",
-    result: "Created a balanced daily routine",
-  },
-  {
-    quote:
-      "The biggest difference was how practical everything felt. I could actually follow the plan with the food I already eat at home.",
-    name: "EasyDiet Member",
-    journey: "Personalised Nutrition",
-    result: "Made healthy eating easier",
-  },
+  { image: "/images/seema-testimonial.png", name: "Seema" },
+  { image: "/images/priya-testimonial.png", name: "Priya" },
+  { image: "/images/adarsh-testimonial.png", name: "Adarsh Pal" },
+  { image: "/images/padma-testimonial.png", name: "Padma" },
+  { image: "/images/anita-testimonial.png", name: "Anita" },
 ];
 
 export default function TestimonialsIntro() {
-  const [active, setActive] = useState(0);
-
-  const testimonial = testimonials[active];
-
-  const previous = () => {
-    setActive((current) =>
-      current === 0 ? testimonials.length - 1 : current - 1,
-    );
-  };
-
-  const next = () => {
-    setActive((current) =>
-      current === testimonials.length - 1 ? 0 : current + 1,
-    );
-  };
+  const items = [...testimonials, ...testimonials];
 
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-[#17352A] px-6 py-28 text-[#FFFDF8] md:px-10 md:py-36 lg:px-14 lg:py-44"
+      className="relative isolate overflow-hidden bg-[#112D23] py-24 text-[#F8F6EF] sm:py-32 lg:py-36"
     >
-      {/* Background quotation mark */}
+      {/* Premium ambient lighting */}
+      <div className="pointer-events-none absolute -left-40 top-10 -z-10 h-[500px] w-[500px] rounded-full bg-[#8DBD70]/[0.09] blur-[130px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 -z-10 h-[500px] w-[500px] rounded-full bg-[#D4C19A]/[0.07] blur-[140px]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_15%,rgba(0,0,0,0.15)_100%)]" />
 
-      <div className="pointer-events-none absolute -right-5 top-0 select-none text-[22rem] font-serif font-light leading-none text-white/[0.035] md:text-[30rem]">
-        “
-      </div>
-
-      <div className="relative mx-auto max-w-[1250px]">
-
-        {/* =========================================
-            HEADER
-        ========================================= */}
-
-        <div className="grid gap-12 lg:grid-cols-[0.3fr_1fr] lg:gap-24">
-
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{
-              duration: 0.8,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
-            <p className="text-[13px] font-semibold uppercase tracking-[0.28em] text-[#CBE5BA]">
-              Real Journeys
-            </p>
-
-            <div className="mt-6 hidden h-20 w-px bg-[#CBE5BA]/30 lg:block" />
-          </motion.div>
-
-          <div>
-
-            <div className="overflow-hidden">
-
-              <motion.h2
-                initial={{ y: "100%" }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 1,
-                  ease: [0.76, 0, 0.24, 1],
-                }}
-                className="max-w-[1000px] text-5xl font-light leading-[1.02] tracking-[-0.045em] md:text-7xl lg:text-[6.5rem]"
-              >
-                Small changes.
-                <br />
-                <span className="font-normal italic text-[#CBE5BA]">
-                  Real difference.
-                </span>
-              </motion.h2>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* =========================================
-            TESTIMONIAL
-        ========================================= */}
-
+      {/* Editorial header */}
+      <div className="mx-auto max-w-[1450px] px-6 sm:px-10 lg:px-16">
         <motion.div
-          key={active}
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="mt-20 border-t border-white/15 pt-12 md:mt-28 md:pt-16"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end"
         >
-
-          <div className="grid gap-12 lg:grid-cols-[1fr_0.35fr] lg:gap-24">
-
-            {/* QUOTE */}
-
-            <div>
-
-              <div className="mb-8 text-5xl font-serif font-light text-[#CBE5BA]/60 md:text-7xl">
-                “
-              </div>
-
-              <blockquote className="max-w-[900px] text-3xl font-light leading-[1.25] tracking-[-0.025em] md:text-5xl lg:text-6xl">
-                {testimonial.quote}
-              </blockquote>
-
-              <div className="mt-10">
-
-                <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#CBE5BA]">
-                  {testimonial.name}
-                </p>
-
-                <p className="mt-2 text-base text-white/50">
-                  {testimonial.journey}
-                </p>
-
-              </div>
-
+          <div>
+            <div className="mb-8 flex items-center gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8D0B5]/30 text-[#D8D0B5]">
+                <Sparkles size={15} strokeWidth={1.3} />
+              </span>
+              <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-[#D8D0B5] sm:text-xs sm:tracking-[0.38em]">
+                The EasyDiet Experience
+              </span>
             </div>
 
-            {/* RESULT */}
+            <h2 className="max-w-5xl text-[clamp(3rem,7.5vw,7.6rem)] font-light leading-[0.99] tracking-[-0.065em]">
+              A healthier life,
+              <br />
+              <span className="font-serif italic font-normal text-[#D8D0B5]">
+                one story at a time.
+              </span>
+            </h2>
 
-            <div className="flex flex-col justify-end">
-
-              <div className="border-t border-white/15 pt-7">
-
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/45">
-                  Journey
-                </p>
-
-                <p className="mt-5 text-xl font-light leading-8 text-white/85">
-                  {testimonial.result}
-                </p>
-
-              </div>
-
-            </div>
-
+            <p className="mt-7 max-w-lg text-sm leading-7 text-white/55 sm:mt-9 sm:text-base sm:leading-8">
+              Meaningful change looks different for everyone. Explore
+              personal journeys shaped by mindful choices and healthier
+              everyday habits.
+            </p>
           </div>
 
+          <div className="hidden pb-2 lg:block">
+            <div className="flex items-center gap-4 border-l border-[#D8D0B5]/30 pl-5">
+              <span className="font-serif text-5xl italic text-[#D8D0B5]">
+                05
+              </span>
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/80">
+                  Personal stories
+                </p>
+                <p className="mt-2 text-xs text-white/40">
+                  Every journey is unique
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
-        {/* =========================================
-            CONTROLS
-        ========================================= */}
-
-        <div className="mt-14 flex items-center justify-between border-t border-white/15 pt-7">
-
-          <div className="flex items-center gap-3">
-
-            {testimonials.map((item, index) => (
-              <button
-                key={item.journey}
-                type="button"
-                onClick={() => setActive(index)}
-                aria-label={`View testimonial ${index + 1}`}
-                className={`h-px transition-all duration-300 ${
-                  index === active
-                    ? "w-12 bg-[#CBE5BA]"
-                    : "w-6 bg-white/25 hover:bg-white/50"
-                }`}
-              />
-            ))}
-
-          </div>
-
-          <div className="flex items-center gap-3">
-
-            <button
-              type="button"
-              onClick={previous}
-              aria-label="Previous testimonial"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 hover:border-[#CBE5BA]/50 hover:bg-white/5"
-            >
-              <ArrowLeft size={16} strokeWidth={1.4} />
-            </button>
-
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Next testimonial"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 hover:border-[#CBE5BA]/50 hover:bg-white/5"
-            >
-              <ArrowRight size={16} strokeWidth={1.4} />
-            </button>
-
-          </div>
-
+        <div className="mt-12 flex items-center gap-4 sm:mt-16">
+          <span className="h-px w-12 bg-[#D8D0B5]/70 sm:w-20" />
+          <span className="text-[9px] uppercase tracking-[0.32em] text-white/40 sm:text-[10px]">
+            Stories of progress
+          </span>
+          <span className="h-px flex-1 bg-white/10" />
         </div>
-
       </div>
+
+      {/* Seamless horizontal showcase */}
+      <div className="testimonial-viewport group relative mt-10 sm:mt-14">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#112D23] via-[#112D23]/80 to-transparent sm:w-24 lg:w-36" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#112D23] via-[#112D23]/80 to-transparent sm:w-24 lg:w-36" />
+
+        <div className="ed-luxury-track flex w-max items-stretch gap-5 px-5 sm:gap-7 sm:px-8 lg:gap-8">
+          {items.map((item, index) => (
+            <motion.article
+              key={`${item.name}-${index}`}
+              whileHover={{ y: -7 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="group/card w-[265px] shrink-0 rounded-[25px] border border-[#D8D0B5]/15 bg-gradient-to-b from-white/[0.075] to-white/[0.025] p-2 shadow-[0_24px_70px_rgba(0,0,0,0.17)] transition-colors duration-500 hover:border-[#D8D0B5]/45 sm:w-[320px] sm:rounded-[30px] sm:p-2.5 lg:w-[355px]"
+            >
+              <a
+                href={item.image}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`View ${item.name}'s full testimonial`}
+                className="relative block overflow-hidden rounded-[18px] bg-[#F7F4EC] sm:rounded-[22px]"
+              >
+                <img
+                  src={item.image}
+                  alt={`${item.name} EasyDiet customer story`}
+                  loading={index < 3 ? "eager" : "lazy"}
+                  draggable={false}
+                  className="block h-auto w-full object-contain transition-transform duration-700 ease-out group-hover/card:scale-[1.025]"
+                />
+
+                <span className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-[#F8F6EF]/90 text-[#17352A] shadow-lg backdrop-blur-md transition duration-300 group-hover/card:rotate-45 group-hover/card:bg-white">
+                  <ArrowUpRight size={18} strokeWidth={1.5} />
+                </span>
+              </a>
+
+              <div className="flex items-center justify-between gap-3 px-2 pb-2 pt-4 sm:px-3 sm:pb-3 sm:pt-5">
+                <div className="flex min-w-0 items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D8D0B5]/20 bg-[#D8D0B5]/[0.07] text-[#D8D0B5] transition-colors group-hover/card:bg-[#D8D0B5]/15">
+                    <Heart size={17} strokeWidth={1.35} />
+                  </span>
+
+                  <div className="min-w-0">
+                    <h3 className="truncate text-sm font-medium tracking-wide text-[#F8F6EF] sm:text-base">
+                      {item.name}
+                    </h3>
+                    <p className="mt-1.5 text-[9px] uppercase tracking-[0.22em] text-[#D8D0B5]/65 sm:text-[10px]">
+                      The EasyDiet Story
+                    </p>
+                  </div>
+                </div>
+
+                <span className="font-serif text-sm italic text-[#D8D0B5]/60">
+                  {String((index % testimonials.length) + 1).padStart(2, "0")}
+                </span>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+
+      {/* Refined footer */}
+      <div className="mx-auto mt-12 flex max-w-[1450px] flex-col gap-5 px-6 sm:mt-16 sm:px-10 md:flex-row md:items-center md:justify-between lg:px-16">
+        <p className="max-w-md text-[11px] leading-6 text-white/40 sm:text-xs">
+          Every journey is personal. Individual experiences and results may vary.
+        </p>
+
+        <div className="flex items-center gap-3">
+          <span className="h-px w-7 bg-[#D8D0B5]/50" />
+          <span className="text-[9px] uppercase tracking-[0.25em] text-[#D8D0B5]/75 sm:text-[10px] sm:tracking-[0.32em]">
+            Better Food. Healthier Life.
+          </span>
+          <span className="h-px w-7 bg-[#D8D0B5]/50" />
+        </div>
+      </div>
+
+      <style>{`
+        .ed-luxury-track {
+          animation: ed-luxury-marquee 52s linear infinite;
+          will-change: transform;
+        }
+
+        .testimonial-viewport:hover .ed-luxury-track {
+          animation-play-state: paused;
+        }
+
+        @keyframes ed-luxury-marquee {
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(-50%, 0, 0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .ed-luxury-track {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }
