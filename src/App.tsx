@@ -14,6 +14,11 @@ import HowItWorks from "./pages/HowItWorks";
 import Guides from "./pages/Guides";
 import Resources from "./pages/Resources";
 import FAQ from "./pages/FAQ";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import HealthAssessment from "./pages/HealthAssessment";
+import Dashboard from "./pages/Dashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 
 import Philosophy from "./sections/PhilosophyIntro";
 import Programs from "./sections/ProgramsIntro";
@@ -48,59 +53,63 @@ function PlaceholderPage({
 function App() {
   return (
     <BrowserRouter>
-      {/* Premium Loading Experience */}
       <PageLoader />
 
       <div className="min-h-screen bg-[#F7F4EC] text-[#17352A]">
-        {/* Main Navigation */}
         <Header />
 
-        {/* Main Content */}
         <main>
           <Routes>
-            {/* HOME */}
+            {/* Home */}
             <Route path="/" element={<Home />} />
 
-            {/* PROGRAMS */}
+            {/* Programs */}
             <Route path="/programs" element={<Programs />} />
 
-            {/* HEALTHY WEIGHT LOSS */}
+            {/* Weight management */}
             <Route path="/weight-loss" element={<WeightLoss />} />
-
-            {/* HEALTHY WEIGHT GAIN */}
             <Route path="/weight-gain" element={<WeightGain />} />
 
-            {/* HEALTHY LIFESTYLE */}
+            {/* Healthy lifestyle */}
             <Route
               path="/healthy-lifestyle"
               element={<HealthyLifestyle />}
             />
 
-            {/* PHILOSOPHY */}
+            {/* Philosophy */}
             <Route path="/philosophy" element={<Philosophy />} />
 
-            {/* ABOUT EASYDIET */}
+            {/* About and contact */}
             <Route path="/about" element={<About />} />
-
-            {/* CONTACT */}
             <Route path="/contact" element={<Contact />} />
 
-            {/* HOW IT WORKS */}
-            <Route
-              path="/how-it-works"
-              element={<HowItWorks />}
-            />
+            {/* How it works */}
+            <Route path="/how-it-works" element={<HowItWorks />} />
 
-            {/* NUTRITION GUIDES */}
+            {/* Guides and resources */}
             <Route path="/guides" element={<Guides />} />
-
-            {/* RESOURCES */}
             <Route path="/resources" element={<Resources />} />
 
             {/* FAQ */}
             <Route path="/faq" element={<FAQ />} />
 
-            {/* PRIVACY POLICY */}
+            {/* Authentication */}
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+
+            {/* Health assessment */}
+            <Route
+              path="/health-assessment"
+              element={<HealthAssessment />}
+            />
+
+            {/* Client dashboard */}
+            <Route path="/dashboard" element={<Dashboard />} />
+
+            {/* Admin dashboard */}
+            <Route path="/admin" element={<AdminDashboard />} />
+
+            {/* Privacy policy */}
             <Route
               path="/privacy-policy"
               element={
@@ -111,7 +120,7 @@ function App() {
               }
             />
 
-            {/* TERMS & CONDITIONS */}
+            {/* Terms and conditions */}
             <Route
               path="/terms"
               element={

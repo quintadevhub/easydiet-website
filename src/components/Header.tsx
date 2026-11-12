@@ -48,7 +48,7 @@ export default function Header() {
     };
   }, []);
 
-  // Close the menu after navigation
+  // Close navigation after route changes
   useEffect(() => {
     setMenuOpen(false);
     setProgramsOpen(false);
@@ -74,8 +74,8 @@ export default function Header() {
             : "bg-transparent"
         }`}
       >
-        <div className="flex h-[110px] w-full items-center justify-between px-7 sm:px-8 md:px-10 lg:px-14 xl:px-20">
-          {/* LARGER LOGO WITH MORE LEFT SPACING */}
+        <div className="flex h-[90px] w-full items-center justify-between gap-3 px-4 sm:h-[100px] sm:px-8 md:h-[110px] md:px-10 lg:px-14 xl:px-20">
+          {/* LOGO */}
           <Link
             to="/"
             className="relative z-[110] flex shrink-0 items-center"
@@ -84,20 +84,36 @@ export default function Header() {
             <img
               src="/logo/easydiet-logo.png"
               alt="EasyDiet.in"
-              className="h-[88px] w-auto object-contain md:h-[100px] lg:h-[108px]"
+              className="h-[68px] w-auto object-contain sm:h-[82px] md:h-[100px] lg:h-[108px]"
             />
           </Link>
 
           {/* RIGHT CONTROLS */}
           <div className="relative z-[110] flex items-center gap-2 sm:gap-3 md:gap-4">
+            {/* LOGIN */}
+            <Link
+              to="/login"
+              className="inline-flex h-10 items-center justify-center rounded-xl border border-[#075B32]/20 bg-[#FFFDF8] px-3 text-xs font-semibold text-[#075B32] shadow-sm transition-colors hover:bg-[#CBE5BA] sm:h-11 sm:px-4 sm:text-sm md:px-5"
+            >
+              Login
+            </Link>
+
+            {/* SIGN UP */}
+            <Link
+              to="/signup"
+              className="inline-flex h-10 items-center justify-center gap-1 rounded-xl bg-[#075B32] px-3 text-xs font-semibold text-white shadow-sm transition-all hover:bg-[#064927] sm:h-11 sm:gap-2 sm:px-4 sm:text-sm md:px-5"
+            >
+              <span>Get Started</span>
+              <ArrowUpRight size={15} />
+            </Link>
+
             {/* GET MY DIET PLAN */}
             <button
               type="button"
               onClick={() => setFormOpen(true)}
-              className="group hidden h-[60px] items-center gap-4 rounded-xl bg-[#FFFDF8] px-5 text-[11px] font-semibold uppercase tracking-[0.13em] text-[#075B32] shadow-[0_8px_30px_rgba(23,53,42,0.08)] transition-all duration-300 hover:bg-[#CBE5BA] sm:flex md:px-7"
+              className="group hidden h-[60px] items-center gap-3 rounded-xl bg-[#FFFDF8] px-5 text-[11px] font-semibold uppercase tracking-[0.13em] text-[#075B32] shadow-[0_8px_30px_rgba(23,53,42,0.08)] transition-all duration-300 hover:bg-[#CBE5BA] lg:flex xl:px-7"
             >
               <span>Get My Diet Plan</span>
-
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#075B32]/[0.08] transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowUpRight size={16} strokeWidth={1.5} />
               </span>
@@ -109,10 +125,10 @@ export default function Header() {
               onClick={() => setMenuOpen(true)}
               aria-label="Open navigation"
               aria-expanded={menuOpen}
-              className="group flex h-[56px] w-[56px] items-center justify-center rounded-xl bg-[#FFFDF8] text-[#075B32] shadow-[0_8px_30px_rgba(23,53,42,0.08)] transition-all duration-300 hover:bg-[#075B32] hover:text-white md:h-[60px] md:w-[60px]"
+              className="group flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFFDF8] text-[#075B32] shadow-[0_8px_30px_rgba(23,53,42,0.08)] transition-all duration-300 hover:bg-[#075B32] hover:text-white sm:h-11 sm:w-11 md:h-[60px] md:w-[60px]"
             >
               <Menu
-                size={25}
+                size={23}
                 strokeWidth={1.25}
                 className="transition-transform duration-300 group-hover:scale-105"
               />
@@ -187,7 +203,6 @@ export default function Header() {
                     <span className="text-2xl font-light tracking-[-0.045em] text-[#17352A] transition-colors group-hover:text-[#075B32] md:text-[2rem]">
                       Home
                     </span>
-
                     <ArrowUpRight
                       size={20}
                       strokeWidth={1.2}
@@ -209,7 +224,6 @@ export default function Header() {
                     <span className="text-2xl font-light tracking-[-0.045em] text-[#17352A] transition-colors group-hover:text-[#075B32] md:text-[2rem]">
                       Our Philosophy
                     </span>
-
                     <ArrowUpRight
                       size={20}
                       strokeWidth={1.2}
@@ -229,7 +243,6 @@ export default function Header() {
                     <span className="text-2xl font-light tracking-[-0.045em] text-[#17352A] transition-colors group-hover:text-[#075B32] md:text-[2rem]">
                       Programs
                     </span>
-
                     <span
                       className={`flex h-9 w-9 items-center justify-center rounded-full border border-[#075B32]/20 text-[#075B32] transition-transform duration-300 ${
                         programsOpen ? "rotate-180" : ""
@@ -261,11 +274,9 @@ export default function Header() {
                               <span className="text-[9px] font-semibold tracking-[0.18em] text-[#075B32]/60">
                                 {String(index + 1).padStart(2, "0")}
                               </span>
-
                               <span className="text-sm font-light text-[#17352A]/75 transition-colors group-hover:text-[#075B32] md:text-base">
                                 {program.label}
                               </span>
-
                               <ArrowUpRight
                                 size={14}
                                 strokeWidth={1.4}
@@ -279,7 +290,7 @@ export default function Header() {
                   </AnimatePresence>
                 </div>
 
-                {/* ALL OTHER PAGES */}
+                {/* OTHER PAGES */}
                 {navigation.map((item, index) => (
                   <motion.div
                     key={item.href}
@@ -297,7 +308,6 @@ export default function Header() {
                       <span className="text-2xl font-light tracking-[-0.045em] text-[#17352A] transition-colors group-hover:text-[#075B32] md:text-[2rem]">
                         {item.label}
                       </span>
-
                       <ArrowUpRight
                         size={20}
                         strokeWidth={1.2}
@@ -307,6 +317,23 @@ export default function Header() {
                   </motion.div>
                 ))}
 
+                {/* MOBILE AUTH BUTTONS */}
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <Link
+                    to="/login"
+                    className="flex items-center justify-center rounded-xl border border-[#075B32]/20 px-4 py-4 text-sm font-semibold text-[#075B32] transition-colors hover:bg-[#CBE5BA]"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    to="/signup"
+                    className="flex items-center justify-center gap-1 rounded-xl bg-[#075B32] px-4 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#064927]"
+                  >
+                    Get Started
+                    <ArrowUpRight size={16} />
+                  </Link>
+                </div>
+
                 {/* GET MY DIET PLAN */}
                 <button
                   type="button"
@@ -314,12 +341,11 @@ export default function Header() {
                     setMenuOpen(false);
                     setFormOpen(true);
                   }}
-                  className="group mt-6 flex w-full items-center justify-between bg-[#075B32] px-5 py-4 text-left text-white transition-colors duration-300 hover:bg-[#064927] sm:hidden"
+                  className="group mt-3 flex w-full items-center justify-between bg-[#075B32] px-5 py-4 text-left text-white transition-colors duration-300 hover:bg-[#064927]"
                 >
                   <span className="text-[10px] font-semibold uppercase tracking-[0.15em]">
                     Get My Diet Plan
                   </span>
-
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-transform group-hover:translate-x-1">
                     <ArrowUpRight size={16} strokeWidth={1.5} />
                   </span>
@@ -333,12 +359,10 @@ export default function Header() {
                     <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#075B32]">
                       Better Food · Healthy Life
                     </p>
-
                     <p className="mt-1 text-xs text-[#17352A]/45">
                       Nutrition made personal.
                     </p>
                   </div>
-
                   <a
                     href="https://wa.me/918923161712"
                     target="_blank"

@@ -211,7 +211,7 @@ export default function CustomerReviews() {
 
         .review-wave-viewport:hover .ed-review-wave-track {
           animation-play-state: paused;
-        }
+        }S
 
         @keyframes ed-review-marquee {
           from {
